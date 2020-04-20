@@ -1,5 +1,3 @@
-import Dispatcher from './Dispatcher';
-
 export const Type = {
     INCREMENT: 'Increment',
     DECREMENT: 'Decrement',
@@ -8,15 +6,15 @@ export const Type = {
 
 export const increment = () => {
     console.log("# call action:", Type.INCREMENT);
-    Dispatcher.dispatch({type: Type.INCREMENT});
+    return({type: Type.INCREMENT});
 }
 
 export const decrement = () => {
     console.log("# call action:", Type.DECREMENT);
-    Dispatcher.dispatch({type: Type.DECREMENT});
+    return ({type: Type.DECREMENT});
 }
 
 export const zero = () => {
     console.log("# call action:", Type.ZERO);
-    Dispatcher.dispatch({type: Type.ZERO});
+    return ({type: Type.ZERO});
 }
