@@ -1,15 +1,8 @@
 import { Type } from '../action/theme';
 
 const themeReducer = (state = {theme: Type.LIGHT}, action) => {
-    switch (action.type) {
-        case Type.DARK:
-            state.theme = Type.DARK;
-            break;
-        default:
-            state.theme = Type.LIGHT;
-            break;
-    }
-    return state;
+    if (action.type == Type.DARK) return {theme: Type.DARK};
+    return {theme: Type.LIGHT};
 }
 
 export default themeReducer;

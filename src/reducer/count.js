@@ -1,20 +1,12 @@
 import { Type } from '../action/counter';
 
-const countReducer = (state = {count: 0}, action) => {
+const countReducer = (state = {value: 10}, action) => {
     switch (action.type) {
-        case Type.INCREMENT:
-            state.count += 1;
-            break;
-        case Type.DECREMENT:
-            state.count -= 1;
-            break;
-        case Type.ZERO:
-            state.count = 0;
-            break;
-        default:
-            break;
+        case Type.INCREMENT: return {value: state.value + 1};
+        case Type.DECREMENT: return {value: state.value -1};
+        case Type.ZERO: return {value: 0};
+        default: return Object.assign({}, state);
     }
-    return state;
 }
 
 export default countReducer;
